@@ -1,0 +1,18 @@
+---
+applications:
+
+- name: hellospring
+  memory: 1024M
+  random-route: true
+  path: application/target/hellospring-application.jar
+  buildpacks:
+    - java_buildpack
+  env:
+    TARGET_RUNTIME: main
+    JBP_CONFIG_SAPJVM_MEMORY_SIZES: 'metaspace:96m..'
+    SPRING_PROFILES_ACTIVE: 'cloud'
+#  services:
+#  - my-application-logs
+#  - my-xsuaa
+#  - my-destination
+#  - my-connectivity
